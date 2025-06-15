@@ -2909,4 +2909,66 @@ Objective: Practice inheritance, composition, and method overriding.
 # res = 0
 # while 
 
+
+
 #check something
+
+# def cakes(recipe, available):
+#     # counter = recipe[1] // available[1]
+#     minimum = []
+#     for i in recipe:
+#         if i in available and recipe[i] <= available[i]:
+#             minimum.append(available[i] // recipe[i])
+#         elif i not in available or recipe[i] >= available[i]: 
+#             return 0
+            
+#     return sorted(minimum)[0]
+            
+            
+#     # return counter
+        
+    
+    
+
+# print(cakes({'apples': 3, 'flour': 300, 'sugar': 150, 'milk': 100, 'oil': 100}, {'sugar': 500, 'flour': 2000, 'milk': 2000, 'apples': 15, 'oil': 20}))
+# print(cakes({"flour": 500, "sugar": 200, "eggs": 1}, {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}))
+# print(cakes({"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}, {"sugar": 500, "flour": 2000, "milk": 2000}))
+# print(cakes({'cream': 1, 'flour': 3, 'sugar': 1, 'milk': 1, 'oil': 1, 'eggs': 1}, {'sugar': 1, 'eggs': 1, 'flour': 3, 'cream': 1, 'oil': 1, 'milk': 1}))
+# def erotosphen(n):
+#     primes = [True] * (n + 1)
+#     primes[0] = primes[1] = False
+#     p = 2
+#     while p*p < n:
+#         for i in range(p*p, n+1, p):
+#             primes[i] = False
+#         p+=1
+#     # for i in primes:
+#     #     if primes[i]:
+#     #         return i
+#     return [i for i in range(len(primes)) if primes[i]]
+# print(erotosphen(31))
+
+# def summation_of_primes(primes):
+#     primes_list = [True] * (primes + 1)
+#     primes_list[0] = primes_list[1] = False
+#     p = 2
+#     while p * p < primes:
+#         for i in range(p*p, primes + 1, p):
+#             primes_list[i] = False
+    
+#         p+=1
+#     res = []
+#     for i in range(len(primes_list)):
+#         if primes_list[i]:
+#             res.append(i)
+    
+    
+#     return sum(res)
+            
+# print(summation_of_primes(200))
+
+# inputs = list(map(int, input().split()))
+
+
+
+
