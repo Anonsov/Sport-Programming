@@ -437,3 +437,6 @@
 
 # print(x)
             
+s ="konjac"
+
+print(s[0].upper() + s[1:])
