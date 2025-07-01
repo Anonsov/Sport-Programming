@@ -6,7 +6,6 @@ for i in range(m):
     row = []
     for j in range(n):
         row.append(i)
-    
-    if k == i+1:
-        print(row)
-        break
+        
+    matrix.append(row)
+print(matrix[k-1])

@@ -1,6 +1,6 @@
 from random import randint
 m = 5
-n = 6
+n = 5
 matrix = []
 x = 0
 for i in range(m):
@@ -12,14 +12,12 @@ for i in range(m):
 
 for i in matrix:
     print(*i)
-
+    
 print()
-i = 0  
-while i < m:
-    minimum = float('inf')
-    for j in range(n):
-        if minimum > matrix[i][j]:
-            minimum = matrix[i][j]
-    print(minimum)
-    i+=1
-        
+
+for i in range(m):
+    for j in range(i + 1, m - i - 1):
+        matrix[i][j] = 0
+
+for row in matrix:
+    print(*row)

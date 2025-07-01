@@ -1,3 +1,4 @@
+
 # n = int(input())
 # arr = list(map(int, input().split()))
 # q = int(input())
@@ -50,7 +51,6 @@
 
 
 # st = input().split(".")
-# # print(st)
 # flag = True
 # if len(st) == 4:
 #     for i in st:
@@ -115,14 +115,216 @@
 
 
 
-from math import sqrt
-n = int(input())
-res = {}
-res = []
-for i in range(2, int(sqrt(n))+2):
-    res.append()
+# from math import sqrt
+# n = int(input())
+# res = {}
+# res = []
+# for i in range(2, int(sqrt(n))+2):
+#     res.append()
          
 
 
 
 # В магазине есть N (1 ≤ N ≤ 100) мячиков и K (1 ≤ K ≤ 100) видов краски. Мячики лежат в одном ряду. Продавец хочет покрасить все мячики, но при этом условие не должно нарушатся. Условие в том, что никакие 2 соседние мячики не должны иметь одинаковый цвет. Вы должны найти, сколькими вариантами можно это сделать. Если ответ слишком большой, нужно вывести его с остатком от 1000000007.
+
+# n, s = map(int, input().split())
+# res = s // n
+# if s % n != 0:
+#     res += 1
+# print(res)
+
+
+# t = int(input())
+# l = list(map(int, input().split()))
+# res = {}
+# a = 0
+# for i in l:
+#     if i in res:
+#         res[i] += 1
+#     else:
+#         res[i] = 1
+    
+#     if res[i] == 4:
+#         a = i
+
+# if a == 0:
+#     print(-1)
+# else:
+#     print(a)
+
+# n = int(input())
+# if n % 3 == 2:
+#     d = n//3
+#     s = ""
+#     for i in range(n):
+#         if (i + 1) % 3==0:
+#             row = ""
+#             for j in range(1, n+1):
+#                 if (j+1) % 3 == 0:
+#                     row += "+"
+#                 else:
+#                     row += "-"
+#             print(row)
+#         else:
+#             row = ""
+#             for j in range(1, n+1):
+#                 if (j+1) % 3 == 0:
+#                     row += "|"
+#                 else:
+#                     row += "."
+#             print(row)
+            
+# else:
+#     print(".-+|")         
+# matrix = []
+# n, m = map(int, input().split())
+# maxim = float('-inf')
+# for i in range(n):
+#     row = list(map(int, input().split()))
+#     curr = max(row)
+#     if maxim < curr:
+#         maxim = curr
+#     matrix.append(row)
+
+# l = len(str(maxim)) + 1
+
+# for i in matrix:
+#     s = ""
+#     for j in i:
+#         cnt = len(str(j))
+#         s += ((l - cnt) * "_") + str(j)
+#     print(s)
+
+# n = int(input())
+# a = list(map(int, input().split()))
+# k = int(input())
+# res = set()
+# found = False
+# for i in a:
+#     if k % i == 0:
+#         s = k // i
+#         if s in res:
+#             print(i, s)
+#             found = True
+#             break
+#         res.add(i)
+
+# if not found:
+#     print(-1)
+    
+    
+# n, s = list(input().split())
+# arr = set(map(str, input().split()))
+# if s in arr:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+# n, m = list(map(int, input().split()))
+# matrix = []
+# nmatrix = []
+# for i in range(n):
+#     row = list(map(int, input().split()))
+#     matrix.append(row)
+
+# for i in range(m):
+#     row = []
+#     for j in range(n - 1, -1, -1):
+#         row.append(matrix[j][i])
+#     nmatrix.append(row)
+
+# for row in nmatrix:
+#     print(*row)
+
+# s = input()
+# a = ['(', '{', '[']
+# b = [')', '}', ']']
+# x = []
+
+# for i in s:
+#     if i in a:
+#         x.append(i)
+#     elif i in b:
+#         if not x or b.index(i) != a.index(x.pop()):
+#             print("NO")
+#             break
+# if not x:
+#     print("YES")
+
+# n = int(input())
+# arr = list(map(int, input().split()))
+
+# for i in range(0, n - 1, 2):
+#     arr[i], arr[i + 1] = arr[i + 1], arr[i]
+
+# print(*arr)
+
+# t = int(input())
+# l = list(map(int, input().split()))
+# res = set()
+# j = 0
+# for i in l:
+#     res.add(i)    
+# print(len(res))
+
+
+# n = int(input())
+# arr = list(map(int, input().split()))
+# res = {}
+# a = 0
+
+# for num in arr:
+#     if num in res:
+#         res[num] += 1
+#     else:
+#         res[num] = 1
+
+# for cnt in res.values():
+#     if cnt > 1:
+#         a += 1
+
+# print(a)
+
+# n = int(input())
+# words = input().split()
+# res = {}
+# min_lex = 0
+# for i in words:
+#     if i in res:
+#         res[i] += 1
+#     else:
+#         res[i] = 1
+
+#         max_cnt = 0
+#         for cnt in res.values():
+#             if cnt > max_cnt:
+#                 max_cnt = cnt
+
+#         cnter = []
+#         for i, cnt in res.items():
+#             if cnt == max_cnt:
+#                 cnter.append(i)
+
+#         min_lex = cnter[0]
+#         for i in cnter:
+#             if i < min_lex:
+#                 min_lex = i
+
+# print(min_lex)
+
+# n, k = map(int, input().split())
+# arr = list(map(int, input().split()))
+# cnt = 0
+# res = {}
+
+# for i in arr:
+#     if i + k in res:
+#         cnt += res[i + k]
+#     if i in res:
+#         res[i] += 1
+#     else:
+#         res[i] = 1
+
+# print(cnt)
+
