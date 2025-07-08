@@ -121,6 +121,8 @@ print()
 
 
 
+
+
 # вывод сверху побочной линии
 # j = m - i - 1 and i = iterator from 1 to m -> побочная линия
 # j = m - i - 2 and i = iterator from 1 to m  -> линия сверху побочной линии и т.д

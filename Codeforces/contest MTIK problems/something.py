@@ -327,4 +327,71 @@
 #         res[i] = 1
 
 # print(cnt)
+from random import randint
+m = 6
+n = 5
+matrix = []
+for i in range(m):
+    row = []
+    for j in range(m):
+        row.append(0)
+    matrix.append(row)
+    
+for i in matrix:
+    print(*i)   
+  
+  
+print()
+print()
+print()
+  
+  
+  
+  
+  
+# m = 6
+# x = 1
+# for d in range(2 * m - 1):
+#     if d < m:
+#         if d % 2 == 0:
+#             i = d
+#             j = 0
+#             while i >= 0 and j < m:
+#                 matrix[i][j] = x
+#                 x += 1
+#                 i -= 1
+#                 j += 1
+#         else:
+#             i = 0
+#             j = d
+#             while i < m and j >= 0:
+#                 matrix[i][j] = x 
+#                 x += 1
+#                 i += 1
+#                 j -= 1
+#     else:
+#         if d % 2 == 0:
+#             i = m - 1
+#             j = d - (m - 1)
+#             while i > 0 and j < m:
+#                 matrix[i][j] = x
+#                 j += 1
+#                 i -= 1
+#                 x += 1
+#         else:
+#             i = d - m - 1
+#             j = m - 1
+#             while i < m and j > 0:
+#                 matrix[i][j] = x
+#                 i += 1
+#                 j -= 1
+#                 x += 1
+
+
+        
+# for i in matrix:
+#     print(*i)
+        
+        
+
 

@@ -16,15 +16,12 @@ for i in matrix:
 print()
 
 
-for i in range(m//2):
-    l = i + 1
-    r = m - i - 1
-    for j in range(l,  r):
-        matrix[i][j] = 0
+# for i in range(m//2):
+#     l = i + 1
+#     r = m - i - 1
+#     for j in range(l,  r):
+#         matrix[i][j] = 0
         
 
-for row in matrix:
-    print(*row)
-    
-    
-    
+# for row in matrix:
+#     print(*row)

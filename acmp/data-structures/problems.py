@@ -62,3 +62,34 @@
 
 
 # 0262
+
+# N,M,K = map(int, input().split())
+# field = []
+# for i in range(M):
+#     row = list(map(int, input().split()))
+#     row.append(field)
+    
+# rects = {}
+
+# for i in range(N):
+#     for j in range(M):
+#         num = field[i][j]
+#         x = j
+#         y = N - 1 - i
+
+#         if num not in rects:
+#             rects[num] = [x, y, x, y]
+#         else:
+#             if x < rects[num][0]: rects[num][0] = x
+#             if y < rects[num][1]: rects[num][1] = y
+#             if x > rects[num][2]: rects[num][2] = x
+#             if y > rects[num][3]: rects[num][3] = y
+
+# for num in range(1, K + 1):
+#     x1, y1, x2, y2 = rects[num]
+#     print(x1, y1, x2 + 1, y2 + 1)
+
+
+
+
+
