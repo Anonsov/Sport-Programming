@@ -442,5 +442,161 @@
 # print(s[0].upper() + s[1:])
 
 
+# 381A
+
+# def func(n, arr):
+#     print(arr)
+#     s = 0
+#     d = 0
+#     z = n - 1
+#     w = n - 2
+#     if n == 1:
+#         return [arr[0], 0]
+#     while z >= 0 or w >= 0:
+#         if z >= 0:
+#             s += arr[z]
+#             z-=2
+#         if w >= 0:
+#             d += arr[w]
+#             w-=2
+#     return [s, d]    
+    
+# n = int(input())
+# arr = sorted(list(map(int, input().split())))
+# print(*func(n, arr))
+    
+# 381A
+# n = int(input())
+# arr = list(map(int, input().split()))
+# serega = 0
+# dima = 0
+# l = 0
+# r = n - 1
+# k = 0
+# while r - l >= 0:
+#     if k % 2 == 0:
+#         if arr[l] > arr[r]:
+#             serega += arr[l]
+#             l += 1
+#         else:
+#             serega += arr[r]
+#             r -= 1
+#     else:
+#         if arr[l] > arr[r]:
+#             dima += arr[l]
+#             l += 1
+#         else:
+#             dima += arr[r]
+#             r -= 1
+#     k += 1
+# print(serega, dima)
+    
+    
+# 1791C
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     res = []
+#     l = 0
+#     r = n - 1
+#     while l <= r:
+#         if l == r:
+#             res.append(arr[l])
+#             break
+        
+#         res.append(arr[l])
+#         res.append(arr[r])
+#         l += 1
+#         r -= 1
+#     print(*res)
+
+# 1873D
+# t = int(input())
+# for _ in range(t):
+#     n, k = map(int, input().split())
+#     s = input()
+#     cnt = 0
+#     i = 0
+#     while i < n:
+#         if s[i] == "B":
+#             i += k
+#             cnt += 1
+#         else: 
+#             i += 1
+#     print(cnt)    
 
 
+# 2000B
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     l = arr[0]
+#     r = arr[0]
+#     res = "YES"
+#     for i in range(1,n):
+#         if arr[i] + 1 == l:
+#             l = arr[i]
+#         elif arr[i] - 1 == r:
+#             r = arr[i]
+#         else:
+#             res = "NO"
+#             break            
+#     print(res)
+           
+# 1840A 
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     a = input()
+#     res = ""
+#     symbol = a[0]
+#     l = 0
+#     r = 1
+#     while l < n and r < n:
+#         if a[l] == a[r]:
+#             res += a[l]
+#             l = r + 1
+#             r = l + 1
+#         else:
+#             r += 1  
+#     print(res)
+
+# 1843A
+# t = int(input())
+
+# for _ in range(t):
+#     n = int(input())
+#     arr = sorted(list(map(int, input().split())))
+#     l = 0
+#     r = n - 1
+#     res = 0
+#     while l <= r:
+#         res += arr[r] - arr[l]
+#         l += 1
+#         r -= 1
+#     print(res)
+
+
+# 1851B
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     b = sorted(a)
+#     res = True
+#     for i in range(n):
+#         if (a[i] % 2 == 0 and b[i] % 2 == 0) or (a[i] % 2 != 0 and b[i] % 2 != 0):
+#             continue
+#         else:
+#             res = False
+#             break
+#     if res:
+#         print("YES")
+#     else:
+#         print("NO")
+
+
+# 1843B
+t = int(input())

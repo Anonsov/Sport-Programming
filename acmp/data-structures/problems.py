@@ -90,6 +90,64 @@
 #     print(x1, y1, x2 + 1, y2 + 1)
 
 
+# m, n = map(int, input().split()) 
+# k = int(input())  
+# sets = {i: set() for i in range(1, n+1)}            
+# element_to_sets = {i: set() for i in range(1, m+1)} 
+# for _ in range(k):
+#     parts = input().split()
 
+#     if parts[0] == "ADD":
+#         element = int(parts[1])
+#         set_id = int(parts[2])
+#         sets[set_id].add(element)
+#         element_to_sets[element].add(set_id)
+
+#     elif parts[0] == "LISTSET":
+#         set_id = int(parts[1])
+#         result = sorted(sets[set_id])
+#         if result:
+#             print(*result)
+#         else:
+#             print(-1)
+
+#     elif parts[0] == "LISTSETSOF":
+#         element = int(parts[1])
+#         result = sorted(element_to_sets[element])
+#         if result:
+#             print(*result)
+#         else:
+#             print(-1)
+
+
+# a = [1,2,6,7,8,9,45]
+# b = [2,10,13,18]
+# c = []
+# i = 0
+# j = 0
+# while i < len(a) and j < len(a):
+#     if i > len(a) - 1:
+#         for x in b[j:]:
+#             c.append(x)
+#         break
+#     elif j > len(b) - 1:
+#         for x in a[i:]:
+#             c.append(x)
+#         break
+#     if a[i] < b[j]:
+#         c.append(a[i])
+#         i += 1
+#     elif b[j] < a[i]:
+#         c.append(b[j])
+#         j += 1
+#     else:
+#         c.append(a[i])
+#         c.append(b[j])
+#         i += 1
+#         j += 1
+    
+#     print(f"i - {i}, j - {j}")
+#     print(c)
+    
 
 

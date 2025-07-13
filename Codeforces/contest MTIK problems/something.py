@@ -327,23 +327,23 @@
 #         res[i] = 1
 
 # print(cnt)
-from random import randint
-m = 6
-n = 5
-matrix = []
-for i in range(m):
-    row = []
-    for j in range(m):
-        row.append(0)
-    matrix.append(row)
+# from random import randint
+# m = 6
+# n = 5
+# matrix = []
+# for i in range(m):
+#     row = []
+#     for j in range(m):
+#         row.append(0)
+#     matrix.append(row)
     
-for i in matrix:
-    print(*i)   
+# for i in matrix:
+#     print(*i)   
   
   
-print()
-print()
-print()
+# print()
+# print()
+# print()
   
   
   
@@ -393,5 +393,74 @@ print()
 #     print(*i)
         
         
+# n, q = map(int, input().split())
+# currs = sorted(list(map(int, input().split())))
+# targets = list(map(int, input().split()))
 
+# for target in targets:
+#     l = 0
+#     r = n - 1
+#     result = -1
+#     while l <= r:
+#         mid = (l + r) // 2
+#         if currs[mid] >= target:
+#             result = currs[mid]
+#             r = mid - 1
+#         else:
+#             l = mid + 1
+#     print(result)
+
+
+# from math import sqrt
+# c = int(input())
+# l = 0
+# r = c
+# while r - l > 1:
+#     mid = (l+r) / 2
+#     res = sqrt(mid) + mid ** 2
+#     if res < c:
+#         l = mid
+#     else:
+#         r = mid
+
+# print(r, l)
+    
+# for target in targets:
+#     curr = currs
+#     found = False
+#     while len(curr) > 1:
+#         center = (len(curr)) // 2
+#         left = curr[:center]
+#         right = curr[center:]
+#         if target <= left[-1]:
+#             curr = left
+#         elif target >= right[0]:
+#             curr = right
+#         else:
+#             break
+#     if curr and curr[0] == target:
+#         found = True
+
+#     if found:
+#         print("YES")
+#     else:
+#         print("NO")
+
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     s = input()
+#     l = 0
+#     r = n - 1
+#     x = 0
+#     while l<=r:
+#         if s[l] != s[r]:
+#             x += 2
+#         elif s[l] == s[r]:
+#             break
+        
+#         l += 1
+#         r -= 1
+#     print(n - x)
+    
 
