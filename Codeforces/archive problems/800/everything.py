@@ -600,3 +600,24 @@
 
 # 1843B
 t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    i = 0
+    l = 0
+    r = 0
+    cnt = 0
+    found = False
+    while i < n:
+        if a[i] == 0:
+            continue
+        elif a[i] < 0:
+            if not found: 
+                l = i
+                found = True
+            r = i   
+        else:
+            found = False
+            cnt += 1
+        i += 1
+        
