@@ -599,25 +599,377 @@
 
 
 # 1843B
-t = int(input())
-for _ in range(t):
-    n = int(input())
-    a = list(map(int, input().split()))
-    i = 0
-    l = 0
-    r = 0
-    cnt = 0
-    found = False
-    while i < n:
-        if a[i] == 0:
-            continue
-        elif a[i] < 0:
-            if not found: 
-                l = i
-                found = True
-            r = i   
-        else:
-            found = False
-            cnt += 1
-        i += 1
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     summ = 0
+#     i = 0
+#     l = 0
+#     r = 0
+#     cnt = 0
+#     found = False
+#     while i < n:
+#         if a[i] == 0:
+#             i+=1
+#             continue
+#         elif a[i] < 0:
+#             if not found: 
+#                 l = i
+#                 cnt += 1
+#                 found = True
+#             r = i   
+#         else:
+#             found = False
+#         summ += abs(a[i])    
+#         i += 1
+#     print(summ, cnt)
+
+# 1968B
+# t = int(input())
+# for _ in range(t):
+#     n, m = map(int, input().split())
+#     a = input()
+#     b = input()
+#     i = 0
+#     j = 0
+#     k = 0
+#     while i < n and j < m:
+#         if a[i] == b[j]:
+#             k += 1
+#             i += 1
+#             j += 1
+#         elif a[i] != b[j]:
+#             j += 1
+#     print(k)
+
+# 2025A - not done yet
+# t = int(input())
+# for _ in range(t):
+#     s = input()
+#     t = input()
+#     ls = len(s)
+#     lt = len(s)
+#     i = 0
+#     j = 0
+#     cnt = 0
+#     while i < ls and j < ls:
+#         if s[i] == t[j]:
+#             cnt += 1
+#         else:
+#             break
+#     if cnt == ls or cnt == lt:
+#         print(cnt + 1)
+#     elif cnt > 0:
+#         print(cnt + 1)
         
+        
+
+
+# 1646B - not done yet
+# --------------------- WRONG ONE-----------------------------
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     arr = sorted(arr, reverse=True)
+#     if n % 2 == 0:
+#         mid = (n // 2) - 1
+#         s_summ = sum(arr[mid:])
+#     else:
+#         mid = n // 2
+#         s_summ = sum(arr[mid:])
+#     l = 0
+#     k_sum = 0
+#     while l < mid:
+#         k_sum += arr[l]
+#         l += 1
+#     print(arr)
+#     print(k_sum, s_summ)
+#     print( k_sum + arr[mid-1], s_summ - arr[mid-1])
+#     if k_sum > s_summ or (s_summ - arr[mid]) > (k_sum + arr[mid-1]):
+#         print("YES")
+#     else:
+#         print("NO")
+# --------------------- WRONG ONE-------------------------------
+
+
+# 1646B
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     l = 0
+#     r = n - 2
+#     arr = sorted(arr, reverse=True)
+#     redsumm = 0
+#     bluesumm = arr[-1]
+#     found = False
+#     while l < r:
+#         redsumm += arr[l]
+#         bluesumm += arr[r]
+#         if redsumm > bluesumm:
+#             found = True
+#             break
+#         l += 1
+#         r -= 1
+#     if found:
+#         print("YES")
+#     else:
+#         print("NO")
+
+# 1746B
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     b = sorted(a)
+#     c = 0
+#     for i in range(n):
+#         if a[i] != b[i]:
+#             c += 1
+#     print(int(c/2))
+
+
+# eval()
+# t = int(input())
+# for _ in range(t):
+#     n, m = map(int, input().split())
+#     arr = list(map(int, input().split()))
+#     for o in range(m):
+#         operator, l, r = map(int, input().split())
+#
+# for i in range()
+# int(input())
+
+# 2007B
+# t = int(input())
+# for _ in range(t):
+#     n, m = map(int, input().split())
+#     arr = list(map(int, input().split()))
+#     maxim = max(arr)
+#     res = []
+#     for i in range(m):
+#         operator, l, r = input().split()
+#         l = int(l)
+#         r = int(r)
+#         if l <= maxim <= r:
+#             if operator == '+':
+#                 maxim += 1
+#             else:
+#                 maxim -= 1
+#         res.append(maxim)
+#     print(*res)
+
+# 2000C
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     m = int(input())
+#     for i in range(m):
+#         map_counter = {}
+#         map_counter2 = {}
+#         # set_counter = set()
+#         s = input()
+#         found = True
+#         if len(s) != n:
+#             found = False
+#         else:
+#             for j in range(n):
+#                 if a[j] not in map_counter and s[j] not in map_counter2:
+#                     map_counter[a[j]] = s[j]
+#                     map_counter2[s[j]] = a[j]
+#                 else:
+#                     add1 = s[j] in map_counter2
+#                     add2 = a[j]  in map_counter
+#                     if s[j] in map_counter2:
+#                         if map_counter2[s[j]] != a[j]:
+#                             found = False
+#                             break
+#                     if a[j] in map_counter:
+#                         if map_counter[a[j]] != s[j]:
+#                             found = False
+#                             break
+#         if found:
+#             print("YES")
+#         else:
+#             print("NO")
+
+# 1907B
+# t = int(input())
+# for _ in range(t):
+#     s = list(input())
+#     n = len(s)
+#     upper = []
+#     lower = []
+#     for i in range(n):
+#         if s[i] == "b":
+#             s[i] = ''
+#             if lower:
+#                 s[lower.pop()] = ''
+#             continue
+#         if s[i] == "B":
+#             s[i] = ''
+#             if upper:
+#                 s[upper.pop()] = ''
+#             continue
+#         if "a" <= s[i] <= "z":
+#             lower.append(i)
+#         else:
+#             upper.append(i)
+#     print("".join(s))
+
+
+# 1996A
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     if n <= 4:
+#         print(1)
+#     elif n % 4 == 0:
+#         print(n//4)
+#     else:
+#         print((n//4) + 1)
+
+# 1915C
+# from math import sqrt
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     sum_arr = sum(arr)
+#     sqrt_arr = int(sqrt(sum_arr))
+#     if sqrt_arr * sqrt_arr == sum_arr:
+#         print("YES")
+#     else:
+#         print("NO")
+
+
+# 2114A
+# print(int("0108"))
+
+# import math
+# for _ in range(int(input())):
+#     s = input()
+#     sqrt_s = int(math.sqrt(int(s)))
+#     int_s = int(s)
+#     if int_s == 0:
+#         print(0, 0)
+#     elif sqrt_s * sqrt_s != int_s:
+#         print(-1)
+#     else:
+#         print(1, sqrt_s - 1)
+
+
+# ИТМО кружок контесты бин поиск 1
+# n, k = map(int, input().split())
+# arr = list(map(int, input().split()))
+# q = list(map(int, input().split()))
+#
+# def binary_search(arr, i):
+#     l = 0
+#     r = len(arr) - 1
+#
+#     while l <= r:
+#         mid = (l + r) // 2
+#         if arr[mid] == i:
+#             return True
+#         elif arr[mid] > i:
+#             r = mid - 1
+#         else:
+#             l = mid + 1
+#     return False
+#
+#
+# for i in q:
+#     found = binary_search(arr, i)
+#     if found:
+#         print("YES")
+#     else:
+#         print("NO")
+
+
+
+# ИТМО кружок контесты бин поиск 2
+# n, k = map(int, input().split())
+# arr = list(map(int, input().split()))
+# q = list(map(int, input().split()))
+#
+# for i in range(k):
+#     l = -1
+#     r = n - 1
+#     while l < r:
+#         mid = (l + r + 1) // 2
+#         if arr[mid] <= q[i]:
+#             l = mid
+#         else:
+#             r = mid - 1
+#
+#     if l == -1:
+#         print(0)
+#     else:
+#         print(l + 1)
+
+# ИТМО кружок контесты бин поиск 3
+# n, k = map(int, input().split())
+# arr = list(map(int, input().split()))
+# q = list(map(int, input().split()))
+#
+# for i in range(k):
+#     l = 0
+#     r = n
+#     while l < r:
+#         mid = (l + r) // 2
+#         if arr[mid] < q[i]:
+#             l = mid + 1
+#         else:
+#             r = mid
+#     print(r + 1)
+
+# ИТМО кружок контесты бин поиск 4 - БЛЯТЬ Я ПОНЯЛ КАК ЭТО ДЕЛАЕТСЯ ЕПТА
+n = int(input())
+arr = list(map(int, input().split()))
+arr = sorted(arr)
+k = int(input())
+res = []
+for i in range(k):
+    l, r = map(int, input().split())
+    left1 = -1
+    right1 = n - 1
+    while left1 < right1:
+        mid = (left1 + right1 + 1) // 2
+        if arr[mid] <= l:
+            left1 = mid
+        else:
+            right1 = mid - 1
+    if left1 == -1:
+        left1 = 0
+    elif arr[left1] < l:
+        left1 += 1
+    left2 = 0
+    right2 = n
+    while left2 < right2:
+        mid = (left2 + right2) // 2
+        if arr[mid] <= r:
+            left2 = mid + 1
+        else:
+            right2 = mid
+    res.append(right2 - left1)
+    # print(right2, left1)
+print(*res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

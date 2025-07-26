@@ -458,7 +458,7 @@
 #             x += 2
 #         elif s[l] == s[r]:
 #             break
-        
+#
 #         l += 1
 #         r -= 1
 #     print(n - x)
