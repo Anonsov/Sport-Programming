@@ -860,3 +860,76 @@
 #         print(-1)
 #     else:
 #         print(1, sqrt_s - 1)
+
+
+# 1744C
+# def binary_search_right(arr, target):
+#     """Найти крайнюю правую позицию для вставки target в отсортированный массив arr"""
+#     left = 0
+#     right = len(arr)
+#
+#     while left < right:
+#         mid = (left + right) // 2
+#         if target < arr[mid]:
+#             right = mid
+#         else:
+#             left = mid + 1
+#
+#     return left
+#
+#
+# def solve(n, c, s):
+#     if c == 'g':
+#         return 0  # Уже зеленый - можно переходить
+#
+#     # Собираем все позиции зеленых светофоров
+#     green_positions = [i for i in range(n) if s[i] == 'g']
+#
+#     # Расширяем позиции для учета цикличности (добавляем второй цикл)
+#     extended_positions = green_positions + [pos + n for pos in green_positions]
+#
+#     max_wait = 0
+#     # Проверяем каждую позицию текущего цвета
+#     for i in range(n):
+#         if s[i] == c:
+#             # Находим индекс первого зеленого света ПОСЛЕ позиции i
+#             next_green_idx = binary_search_right(extended_positions, i)
+#             wait_time = extended_positions[next_green_idx] - i
+#             max_wait = max(max_wait, wait_time)
+#
+#     return max_wait
+#
+#
+# # Обработка ввода
+# t = int(input())
+# for _ in range(t):
+#     n, c = input().split()
+#     n = int(n)
+#     s = input()
+#     print(solve(n, c, s))
+
+# def bns(arr, target):
+#     l = 0
+#     r = len(arr)
+#     while l < r:
+#         mid = (l + r) // 2
+#         if target <= arr[mid]:
+#             r = mid
+#         else:
+#             l = mid + 1
+#     return l
+
+# n, s = map(int, input().split())
+# dorms_orig = list(map(int, input().split()))
+# dorms = []
+# acc = 0
+# for i in dorms_orig:
+#     acc += i
+#     dorms.append(acc)
+# letters = list(map(int, input().split()))
+# for j in range(s):
+#     appartment_idx = bns(dorms, letters[j])
+#     num_appartment = dorms[appartment_idx] - letters[j]
+#     num_appartment = dorms_orig[appartment_idx] - num_appartment
+#     print(appartment_idx + 1, num_appartment)
+

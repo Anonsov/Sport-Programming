@@ -139,6 +139,78 @@
 # ---------------------------------
 # ИТМО КРУЖОК БИН ПОИСК #1
 
+# w, h, n = map(int, input().split())
+# l = max(w, h)
+# r = 10 ** 18
+# while l < r:
+#     m = (l + r) // 2
+#     rectangles_fit = (m // w) * (m // h)
+#     if rectangles_fit >= n:
+#         r = m
+#     else:
+#         l = m + 1
+# print(l)
+
+
+# n, k = map(int,input().split())
+# a = [int(input()) for _ in range(n)]
+# l = 0
+# r = 1e8
+# for i in range(100):
+#     s = 0
+#     m = (l + r) / 2
+#     for j in range(n):
+#         s += a[j] // m
+#     if s >= k:
+#         l = m
+#     else:
+#         r = m
+# print(f"{l:.6f}")
+
+#
+# n, x, y = map(int, input().split())
+#
+# def solve(time):
+#     if n == 0:
+#         return True
+#
+#     if time < min(x,y):
+#         return False
+#
+#     cnt = 1 + ((time - min(x,y)) // x) + ((time - min(x,y)) // y)
+#     return cnt >= n
+#
+# l = 0
+# r = 10**10
+# while l < r:
+#     m = (l + r) // 2
+#     if solve(m):
+#         r = m
+#     else:
+#         l = m + 1
+#
+# print(l)
+
+
+# m, n = map(int, input().split())
+# mat = []
+# for i in range(n):
+#     temper = list(map(int, input().split()))
+#     mat.append(temper)
+#
+# def checker(s):
+#     rt = 0
+#     if m == 0:
+#         return True
+#
+#     for i in range(n):
+#         t, z, y = mat[i]
+#         rt += (s // t)
+#
+#     return rt
+
+
+
 
 
 
