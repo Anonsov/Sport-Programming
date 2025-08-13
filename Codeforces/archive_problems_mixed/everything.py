@@ -933,3 +933,196 @@
 #     num_appartment = dorms_orig[appartment_idx] - num_appartment
 #     print(appartment_idx + 1, num_appartment)
 
+
+# 1593C
+# t = int(input())
+# for _ in range(t):
+#     ints = lambda: map(int, input().split())
+#     n, k = ints()
+#     mice = list(ints())
+#     mice.sort(reverse=True)
+    
+#     saved_mice = 0
+#     cat_pos = 0
+    
+#     for mouse_pos in mice:
+#         if mouse_pos > cat_pos:
+#             saved_mice += 1
+#             cat_pos += (n - mouse_pos)
+#         else:
+#             break
+    
+#     print(saved_mice)
+
+
+
+# 1419D1
+# n = int(input())
+# arr = list(map(int, input().split()))
+# sorted_arr = sorted(arr)
+# res = []
+# l = 0
+# r = n // 2
+# limitl = r
+# cnt = n // 2
+# while l <= limitl and r < n:
+#     res.append(sorted_arr[r])
+#     r+=1
+#     res.append(sorted_arr[l])
+#     l+=1
+    
+# if n % 2 != 0:
+#     res.pop()
+# else:
+#     cnt -= 1
+    
+# print(cnt)
+# print(*res)
+
+
+# 996A
+# n = int(input())
+# dp = [1,5,10,20,100]
+# dp_len = 4
+# res = 0
+# temp = n
+# while n != 0:
+#     while n < dp[dp_len]:
+#         dp_len -= 1
+#     res += n // dp[dp_len]
+#     n = n % dp[dp_len]
+# print(res)
+
+
+# 1941C
+# def good(curr_substr):
+#     checker = curr_substr == "map" or curr_substr == "pie"
+#     return checker
+
+# def solve(n: int, s: str):
+#     l = 0
+#     r = 2
+    
+#     res = 0
+    
+#     if n < 3:
+#         return 0
+
+#     while r < n:
+#         curr_substr = s[l:r+1]
+#         if good(curr_substr):
+#             res += 1
+#             l += 3
+#             r += 3
+#         else:
+#             l += 1
+#             r += 1
+#     return res
+
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     s = input()
+#     print(solve(n, s))
+
+            
+# # 1206B
+# def solve(n: int, a: list):
+#     coins = 0
+#     num_zero = 0
+#     num_negative = 0
+#     for i in range(n):
+#         if a[i] > 0:
+#             coins += a[i] - 1
+#         elif a[i] < 0:
+#             coins += -1 - a[i]
+#             num_negative += 1
+#         elif a[i] == 0:
+#             num_zero += 1
+            
+#     if num_negative > 0:
+#         if num_negative % 2 != 0:
+#             if num_zero > 0:
+#                 coins += 1
+#                 coins += num_zero - 1
+#             else:
+#                 coins += 2
+#         else:
+#             coins += num_zero
+#     else:
+#         coins += num_zero
+    
+#     return coins
+        
+
+# n = int(input())
+# arr = list(map(int, input().split()))
+# print(solve(n, arr))
+
+
+# 2114C
+# def solve(n: int, a: list) -> int:
+#     dp = -1
+#     res = 0
+#     for i in range(n):
+#         if a[i] - dp > 1:
+#             res += 1
+#             dp = a[i]
+    
+#     return res
+
+
+# t = int(input())
+# for _ in range(t):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     print(solve(n, a))
+
+# 1182A
+# n = int(input())
+# if n % 2 == 0:
+#     print(2 ** (int(n / 2)))
+# else:
+#     print(0)
+
+# 368B
+# n, m = map(int, input().split())
+# a = list(map(int, input().split()))
+# dp = [0] * n
+# u = set()
+
+# for i in range(n-1, -1, -1):
+#     u.add(a[i])
+#     dp[i] = len(u)
+
+# for _ in range(m):
+#     q = int(input())
+#     print(dp[q-1])
+
+
+# 1791E
+# def solve(n: int, a: list):
+#     summ = 0
+#     negatives = 0
+#     for i in range(n):
+#         if a[i] <= 0:
+#             negatives += 1
+#             a[i] = -a[i]
+#         summ += a[i]
+    
+#     a.sort()
+#     if negatives % 2 != 0:
+#         summ -= 2*a[0]
+    
+#     return summ
+               
+    
+# for _ in range(int(input())):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     print(solve(n, a))
+
+
+
+
+   
