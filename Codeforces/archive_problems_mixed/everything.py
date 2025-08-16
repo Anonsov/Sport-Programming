@@ -1123,6 +1123,51 @@
 #     print(solve(n, a))
 
 
+# 1345B
+# from math import floor, sqrt
+# def solve(n):
+#     count = 0
+#     while n >= 2:
+#         h = floor((-1 + sqrt(1 + 24*n)) / 6)
+#         if h < 1:
+#             break
+        
+#         c = 3 * (h * (h+1) / 2) - h
+#         n -= c
+#         count += 1
+#     return count 
 
-
+# for _ in range(int(input())):
+#     n = int(input())
+#     print(solve(n))
    
+   
+# 1948B
+
+# def solve(n: int, a: list) -> str:
+#     i = 0
+#     while i < n - 1:
+#         if a[i] > a[i+1]:
+#             digits = str(a[i])
+#             if len(digits) == 1:
+#                 return "NO"
+            
+#             if int(digits[-1]) > a[i+1]:
+#                 return "NO" 
+#             new_elements = []
+#             for d in digits:
+#                 new_elements.append(int(d))
+#             a = a[:i] + new_elements + a[i+1:]
+#             n = len(a)
+            
+#             i = max(0, i - 1)
+#         else:
+#             i += 1
+    
+#     return "YES"
+
+# for _ in range(int(input())):
+#     n = int(input())
+#     a = list(map(int, input().split()))
+#     print(solve(n, a))
+
