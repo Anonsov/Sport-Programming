@@ -464,3 +464,179 @@
 #     print(n - x)
     
 
+
+# def uyobishnaya_recursiya(n, curr=""):
+#     if len(curr) == n:
+#         print(curr)
+#         return
+#     uyobishnaya_recursiya(n, curr + "0")
+#     if not curr or curr[-1] != "1":
+#         uyobishnaya_recursiya(n, curr + "1")
+
+# uyobishnaya_recursiya(int(input()))
+
+
+# n = int(input())
+# a = list(map(int, input().split()))
+# for i in range(0, n - 1, 2):
+#     a[i], a[i + 1] = a[i + 1], a[i]
+# print(*a)
+
+
+# st = input().split(".")
+# flag = True
+# if len(st) == 4:
+#     for i in st:
+#         if i.isdigit():
+#             s = int(i)
+#             if (0 <= s <= 255) == False:
+#                 flag = False
+#                 break
+#         else:
+#             flag = False
+# else:
+#     flag = False
+
+# if flag:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+
+
+
+# a, s = input().split()
+# s = int(s)
+# h, m, sec = map(int, a.split(':'))
+# ts = h * 3600 + m * 60 + sec
+# ts -= s
+# while ts < 0:
+#     ts += 86400
+# nh = ts // 3600
+# nm = (ts % 3600) // 60
+# ns = ts % 60
+# print(f"{nh:02}:{nm:02}:{ns:02}")
+
+
+
+
+
+
+# n = int(input())
+# a = list(map(int, input().split()))
+# k = int(input())
+
+# res = set()
+# found = False
+# for i in a:
+#     if k % i == 0:
+#         s = k // i
+#         if s in res:
+#             print(i, s)
+#             found = True
+#             break
+#         res.add(i)
+
+# if not found:
+#     print(-1)
+
+
+
+
+# a = list(map(int, input().split()))
+# res = {}
+# un = set()
+# for i in range(len(a)):
+#     if a[i] in res:
+#         res[a[i]] += 1
+#     else:
+#         res[a[i]] = 1
+#     un.add(a[i])
+
+# for i in un:
+#     if res[i] == 2:
+#         print(i)
+#         break
+
+
+# s = input()
+# def num(expr):
+#     expr_num = ""
+#     if "*" in expr or "+" in expr:
+#         for i in range(len(expr)):
+#             if expr[i] == "*" or expr[i] == "+":
+#                 break
+#             expr_num += expr[i]
+#     else:
+#         expr_num = expr
+#     return int(expr_num)
+
+
+# def calc(curr_s: str):
+#     result = num(curr_s)
+#     i = 0
+#     while i < len(curr_s) and curr_s[i].isdigit():
+#         i += 1
+#     while i < len(curr_s):
+#         if curr_s[i] == "+":
+#             result += num(curr_s[i+1:])
+#         elif curr_s[i] == "*":
+#             result *= num(curr_s[i+1:])
+#         i += 1
+#         while i < len(curr_s) and curr_s[i].isdigit():
+#             i += 1
+#     return result
+
+# def fb(expr):
+#     s = -1
+#     for i in range(len(expr)):
+#         if expr[i] == '(':
+#             s = i
+#         elif expr[i] == ')':
+#             return s, i
+#     return -1, -1
+
+# def se(expr):
+#     while '(' in expr:
+#         i, j  = fb(expr)
+#         if i == -1:
+#             break
+#         nexpr = expr[i+1:j]
+#         result = calc(nexpr)
+#         expr = expr[:i] + str(result) + expr[j+1:]
+#     return calc(expr)
+
+# print(se(s))
+# n = int(input())
+# k = 0
+# x = 2
+# while x * x <= n:
+#     while n % x == 0:
+#         k += 1
+#         n //= x
+#     x += 1
+# if n > 1:
+#     k += 1
+# print(k)
+
+# wx1, wy1, wx2, wy2 = map(int, input().split())
+# bx1_1, by1_1, bx2_1, by2_1 = map(int, input().split()) 
+# bx1_2, by1_2, bx2_2, by2_2 = map(int, input().split())
+
+# l = min(bx1_1, bx1_2)
+# r = max(bx2_1, bx2_2)
+# t = max(by1_1, by1_2)
+# b = min(by2_1, by2_2)
+
+
+# if l <= wx1 and r >= wx2 and t >= wy1 and b <= wy2:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+
+
+
+

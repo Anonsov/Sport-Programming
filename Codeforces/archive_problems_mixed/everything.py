@@ -156,10 +156,10 @@
             
 
 # 1722C
-# 
-# 
-# 
-# 
+
+
+
+
 
 
 # 1714B
@@ -738,7 +738,7 @@
 #     arr = list(map(int, input().split()))
 #     for o in range(m):
 #         operator, l, r = map(int, input().split())
-#
+
 # for i in range()
 # int(input())
 
@@ -867,27 +867,27 @@
 #     """Найти крайнюю правую позицию для вставки target в отсортированный массив arr"""
 #     left = 0
 #     right = len(arr)
-#
+
 #     while left < right:
 #         mid = (left + right) // 2
 #         if target < arr[mid]:
 #             right = mid
 #         else:
 #             left = mid + 1
-#
+
 #     return left
-#
-#
+
+
 # def solve(n, c, s):
 #     if c == 'g':
 #         return 0  # Уже зеленый - можно переходить
-#
+
 #     # Собираем все позиции зеленых светофоров
 #     green_positions = [i for i in range(n) if s[i] == 'g']
-#
+
 #     # Расширяем позиции для учета цикличности (добавляем второй цикл)
 #     extended_positions = green_positions + [pos + n for pos in green_positions]
-#
+
 #     max_wait = 0
 #     # Проверяем каждую позицию текущего цвета
 #     for i in range(n):
@@ -896,10 +896,10 @@
 #             next_green_idx = binary_search_right(extended_positions, i)
 #             wait_time = extended_positions[next_green_idx] - i
 #             max_wait = max(max_wait, wait_time)
-#
+
 #     return max_wait
-#
-#
+
+
 # # Обработка ввода
 # t = int(input())
 # for _ in range(t):
@@ -1170,4 +1170,157 @@
 #     n = int(input())
 #     a = list(map(int, input().split()))
 #     print(solve(n, a))
+
+# 405A
+# n = int(input())
+# a = list(map(int, input().split()))
+# res = sorted(a)
+# print(*res)
+
+
+# idk
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# ans = a + b + c
+# ans = max(ans, (a + b) * c)
+# ans = max(ans, a * (b + c))
+# ans = max(ans, a * b * c)
+
+# print(ans)
+
+
+# 158B
+# n = int(input())
+# a = list(map(int, input().split()))
+# count = [0] * 5  
+# for size in a:
+#     count[size] += 1
+
+# cars = 0
+# cars += count[4]
+# cars += count[3]
+# count[1] = max(0, count[1] - count[3])
+# cars += (count[2] + 1) // 2
+# if count[2] % 2 == 1:
+#     count[1] = max(0, count[1] - 2)
+# cars += (count[1] + 3) // 4
+# print(cars)
+
+
+# idk
+# n = int(input())
+# a = list(map(int, input().split()))
+# f = 1
+# mx = float('-inf')
+# for i in range(1, n):
+#     if a[i] >= a[i-1]:
+#         f += 1
+#     else:
+#         f = 1
+#     mx = max(mx, f)
+    
+# if n == 1:
+#     print(1)
+# else:
+#     print(mx)    
+    
+# 514A
+# a = input()
+# res = ""
+# mp = {}
+# for i in range(5, 10):
+#     mp[i] = 9 - i
+
+# for i in range(len(a)):
+#     if int(a[i]) in mp:
+#         res += str(mp[int(a[i])])
+#     else:
+#         res += a[i]    
+# if a[0] == "9":
+#     res = "9" + res[1:]
+# print(int(res))
+
+
+# 474B
+# def solve(n: int, a: list, m: int, q: list):
+#     pref_summ = [a[0]]
+#     for i in range(1, n):
+#         pref_summ.append(a[i] + pref_summ[i-1])
+#     print(pref_summ)
+#     for i in range(m):
+#         l = 0
+#         r = n
+#         while l < r:
+#             m = (l + r) // 2
+#             if pref_summ[m] < q[i]:
+#                 l = m + 1
+#             else:
+#                 r = m
+#         print(l+1)
+# ints = lambda: list(map(int, input().split()))
+# n = int(input())
+# a = ints()
+# m = int(input())
+# q = ints()
+
+
+# solve(n, a, m, q)
+
+
+# 579A
+# def binary_turn(n: int) -> str:
+#     res = ""
+#     while n >= 1:
+#         if n % 2 == 0:
+#             res += "0"
+#         else:
+#             res += "1"
+#         n /= 2
+#         n = int(n)
+#     return res
+
+# def solve(n: str) -> int:
+#     cnt = 0
+#     for i in range(len(n) - 1, -1, -1):
+#         if n[i] == "1":
+#             cnt += 1
+#     return cnt        
+            
+
+# n = int(input())
+# bins = binary_turn(n)
+# print(solve(bins))
+
+
+# 1915A
+# t = int(input())
+# for i in range(t):
+#     a, b, c = map(int, input().split())
+#     print(a ^ b ^ c)
+    
+
+# idk
+# for _ in range(int(input())):
+#     res = {}
+#     for i in range(3):
+#         s = input()
+#         row = [s[0], s[1], s[2]]
+#         for j in range(3):
+#             elem = row[j]
+#             if elem != "?":
+#                 if elem in res:
+#                     res[elem] += 1
+#                 else:
+#                     res[elem] = 1
+                    
+#     for j in range(3):
+#         if res[row[j]] < 3:
+#             print(row[j])
+    
+# 467B
+n, m, k = map(int, input().split())
+pl = []
+for _ in range(4):
+    pl.append(int(input()))
 
