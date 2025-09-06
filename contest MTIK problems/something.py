@@ -636,7 +636,94 @@
 #     print("NO")
 
 
+# n = int(input())
+# a = list(map(int, input().split()))
+# cnt = 1
+# mx = cnt
+# for i in range(1, n):
+#     if a[i] == a[i - 1]:
+#         cnt += 1
+#     else:
+#         cnt = 1
+#     if cnt > mx:
+#         mx = cnt
+# print(mx)
 
 
+
+# На шахтном участке расположены n шахт на линии. Нужно построить ровно k станций снабжения. Каждая шахта должна быть прикреплена к ближайшей станции. Найти минимально возможное значение максимального расстояния от шахты до станции.
+
+# n, k = map(int, input().split())
+# a = list(map(int, input().split()))
+# a.sort()
+# res = []
+
+
+
+
+
+# Камера снимает каждый кадр с энергозатратой. Нужно выбрать непрерывный отрезок кадров, суммарная энергия которого ≤ k, при этом отрезок максимальной длины.
+
+# n, k = map(int, input().split())
+# a = list(map(int, input().split()))
+# l = 0
+# r = 0
+# s = 0
+# max_len = 0
+# while r < n:
+#     s += a[r]
+#     while s > k:
+#         s -= a[l]
+#         l += 1
+#     max_len = max(max_len, r - l + 1)
+#     r += 1
+# print(max_len)
+
+
+
+# graphs
+# n, m = map(int, input().split())
+# for i in range(m):
+#     u, v = map(int, input().split())
+# if n - m == 1:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+# n, m = map(int, input().split())
+# for i in range(m):
+#     u, v = map(int, input().split())
+# if n - m > 1:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+
+# n, m = map(int, input().split())
+# g = [[] for i in range(n + 1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[v].append(u)
+#     g[u].append(v)
+
+# used = [False for _ in range(n + 1)]
+# def dfs(v: int):
+#     if used[v]:
+#         return
+#     used[v] = True
+#     for i in range(len(g[v])):
+#         dfs(g[v][i])
+# s = 0
+# for i in range(1, n + 1):
+#     if not used[i]:
+#         s += 1
+#         dfs(i)
+
+# if s == 1 and n - m == 1:
+#     print("YES")
+# else:
+#     print("NO")
 
 
