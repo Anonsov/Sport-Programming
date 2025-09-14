@@ -40,3 +40,76 @@
 #     return min(dp[-1], dp[-2])
 
 # print(minCostClimbingStairs([10,15,20]))
+
+
+# class Solution:
+#     def addStrings(self, num1: str, num2: str) -> str:
+#         res_str = ""
+#         ost = 0
+#         i = len(num1) - 1
+#         j = len(num2) - 1
+#         c = 0
+#         res = []
+#         while i >=0 or j >= 0 or c:
+#             if i >= 0:
+#                 dg = int(num1[i])
+#             else:
+#                 dg = 0
+            
+#             if j >= 0:
+#                 dg2 = int(num2[j])
+#             else:
+#                 dg2 = 0
+            
+#             t = dg + dg2 + c
+#             c = t // 10
+#             res.append(str(t % 10))
+            
+#             i-=1
+#             j-=1
+        
+#         for i in range(len(res) - 1, -1 , -1):
+#             res_str += res[i]
+        
+#         return res_str
+
+# class Solution:
+#     def maxPower(self, s: str) -> int:
+#         res = 0
+#         l = 0
+#         r = 0
+#         mx = float('-inf')
+#         while l < len(s) and r < len(s):
+#             if s[r] == s[l]:
+#                 r += 1
+#                 res += 1
+#             else:
+#                 l = r
+#                 res = 0
+#             mx = max(mx, res)
+#         return mx
+
+# class Solution:
+#     def firstUniqChar(self, s: str) -> int:
+#         mp = {}
+#         for i in range(len(s)):
+#             if s[i] in mp:
+#                 mp[s[i]] += 1
+#             else:
+#                 mp[s[i]] = 1
+            
+#         for i in range(len(s)):
+#             if mp[s[i]] == 1:
+#                 return i
+#         return -1
+
+
+# def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+#     """
+#     Do not return anything, modify nums1 in-place instead.
+#     """
+#     i = 0
+#     l = 0
+#     r = 0
+    
+    

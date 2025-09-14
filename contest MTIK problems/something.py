@@ -700,6 +700,7 @@
 #     print("NO")
 
 
+# FIRST                        
 
 # n, m = map(int, input().split())
 # g = [[] for i in range(n + 1)]
@@ -726,4 +727,440 @@
 # else:
 #     print("NO")
 
+
+# second 
+# n, m = map(int, input().split())
+# g = [[] for _ in range(n+1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[u].append(v)
+#     g[v].append(u)
+
+# s = 0
+
+# used = [False for _ in range(n + 1)]
+# def dfs(v: int):
+#     if used[v]:
+#         return
+#     used[v] = True
+#     for i in g[v]:
+#         dfs(i)
+
+# for i in range(1, n + 1):
+#     if not used[i]:
+#         s += 1
+#         dfs(i)
+        
+# if m > n - s:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+# THIRD
+# n, m = map(int, input().split())
+# g = [[] for ii in range(n + 1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[v].append(u)
+#     g[u].append(v)
+
+
+# used = [False for i in range(n + 1)]
+# def dfs(v):
+#     if used[v]:
+#         return
+#     used[v] = True
+#     for i in g[v]:
+#         dfs(i)
+# s = 0
+
+# for i in range(1, n + 1):
+#     if not used[i]:
+#         s += 1
+#         dfs(i)
+        
+# print(s)
+
+
+# ints = lambda: map(int, input().split())
+# n, m = ints()
+# a, b = ints()
+
+# g: list[list[int | None]] = [[] for i in range(n + 1)]
+
+# for i in range(m):
+#     u, v = ints()
+#     g[v].append(u)
+#     g[u].append(v)
+
+# used: list[bool] = [False for i in range(n + 1)]
+
+# def dfs(v: int) -> None:
+#     if used[v]:
+#         return
+#     used[v] = True
+    
+#     for i in g[v]:
+#         dfs(i)
+
+# dfs(a)
+
+
+# if used[b]:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+
+
+
+
+
+
+
+        
+
+    
+
+# def solve(n, m):
+#     if m > n:
+#         print(-1)
+#         return
+    
+#     matrix = []
+#     for i in range(n):
+#         row = []
+#         for j in range(n):
+#             row.append(0)
+#         matrix.append(row)
+    
+        
+#     edges = 0
+#     smezhnosti = []
+    
+#     for i in range(1, n - m + 1):
+#         for j in range(i):
+#             matrix[i][j] = 1
+#             matrix[j][i] = 1
+#             edges += 1
+#             smezhnosti.append([i + 1, j+ 1])
+            
+#     print(edges)
+#     for i in smezhnosti:
+#         print(*i)
+        
+# n, m = map(int, input().split())
+# solve(n, m)
+
+
+
+# def solve(n, m):
+#     if m < 1 or m > n:
+#         print(-1)
+#         return
+    
+#     if n - m > 10**5:
+#         print(-1)
+#         return 
+
+#     if m == n:
+#         print(0)
+#         return
+    
+#     res = []
+#     for i in range(1, n - m + 1):
+#         res.append([i, i+1])
+    
+#     print(len(res))
+#     for i in res:
+#         print(*i)
+        
+# n, m = map(int, input().split())
+# solve(n, m)
+
+
+# import sys
+# sys.setrecursionlimit(10**5 + 7)
+
+# n, m = map(int, input().split())
+# g = [[]for i in range(n + 1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[u].append(v)
+#     g[v].append(u)
+
+# stepeni = 0
+# used = [False for i in range(n + 1)]
+# def dfs(v: int):
+#     global stepeni
+#     if used[v]:
+#         return 0
+#     used[v] = True
+    
+#     stepeni += len(g[v])
+#     cnt = 1
+#     for i in g[v]:
+#         cnt += dfs(i)
+    
+#     return cnt
+    
+    
+# res= 0
+# for i in range(1, n + 1):
+#     if not used[i]:
+#         stepeni = 0
+#         vershini = dfs(i)
+#         es = stepeni // 2
+#         res += es - (vershini - 1)
+        
+# print(res)
+
+
+
+
+# Новая попытка Б задачи
+# import sys
+# sys.setrecursionlimit(10**5 + 7)
+# vertices = 0
+# edges = 0
+
+# n, m = map(int, input().split())
+# g = [[]for i in range(n + 1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[u].append(v)
+#     g[v].append(u)
+    
+    
+# used  = [False for i in range(n + 1)]
+
+
+# def dfs(v: int):
+#     global vertices, edges
+    
+#     if used[v]:
+#         return
+#     used[v] = True
+#     edges += len(g[v])
+#     vertices += 1
+#     for i in g[v]:
+#         dfs(i)
+# res = 0
+# for i in range(1, n + 1):
+#     if not used[i]:
+#         vertices = 0
+#         edges = 0
+#         dfs(i)
+#         res += (edges // 2) - (vertices - 1)
+# print(res)
+
+
+
+# n, m = map(int, input().split())
+# g = [[]for i in range(n + 1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[u].append(v)
+#     g[v].append(u)
+    
+# used = [False for i in range(n + 1)]    
+
+# p = [0] * (n + 1)
+# d = [0] * (n + 1)
+# def dfs(v: int):
+#     global p, d
+#     if used[v]:
+        
+#         return
+#     used[v] = True
+    
+#     for i in g[v]:
+#         dfs(i)
+            
+    
+# for i in range(1, n + 1):
+#     if not used[i]:
+        
+#         dfs(i)
+
+
+# ОСТРОВА
+# from sys import setrecursionlimit
+# setrecursionlimit(10**5 + 7)
+# n, m = map(int, input().split())
+# matrix = []
+# for i in range(n):
+#     row = list(map(int, input().split()))
+#     matrix.append(row)
+
+# cnt = 0
+# def dfs(i, j):
+#     global cnt
+#     if i >= n or j >= m or i < 0 or j < 0 or matrix[i][j] == 0:
+#         return
+#     matrix[i][j] = 0
+#     cnt += 1
+#     dfs(i, j - 1)
+#     dfs(i - 1, j)
+#     dfs(i, j + 1)
+#     dfs(i + 1, j)
+    
+    
+    
+# res = []
+# for i in range(n):
+#     for j in range(m):
+#         if matrix[i][j] == 1:
+#             cnt = 0
+#             dfs(i, j)
+#             res.append(cnt)
+# res.sort()
+# print(len(res))
+# print(*res)
+
+
+# Подсчет детей
+# n, m = map(int, input().split())
+# g = [[] for i in range(n + 1)]
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     g[u].append(v)
+
+# a = int(input())
+# print(len(g[a]))
+
+
+
+# from sys import setrecursionlimit
+# setrecursionlimit(10**5 + 7)
+# ints = lambda: map(int, input().split())
+
+# n, m = ints()
+# s = 0
+# g = [[] for i in range(n + 1)]
+# used = [False for i in range(n + 1)]
+
+# for i in range(m):
+#     u, v = ints()
+#     g[u].append(v)
+#     g[v].append(u)
+
+# comps = [0] * (n + 1)
+# def dfs(v: int):
+#     global s
+#     if used[v]:
+#         return
+#     used[v] = True
+#     comps[v] = s
+#     for i in g[v]:
+#         dfs(i)
+        
+        
+# for i in range(1, n + 1):
+#     if not used[i]:
+#         s += 1
+#         dfs(i)
+    
+# q = int(input())
+
+# for i in range(q):
+#     u ,v = ints()
+#     if comps[u] == comps[v]:
+#         print("YES")
+#     else:
+#         print("NO")
+
+
+
+# from sys import setrecursionlimit
+# from collections import deque
+# setrecursionlimit(10**5 + 7)
+# ints = lambda: map(int, input().split())
+# res = 0
+# n, m = ints()
+# g = [[] for i in range(n + 1)]
+# used = [False for i in range(n + 1)]
+
+# for i in range(m):
+#     u, v = ints()
+#     g[u].append(v)
+    
+# a = int(input())
+
+# def dfs(v: int):
+#     global res
+#     if used[v]:
+#         return
+    
+#     used[v]= True
+#     res += 1
+#     for i in g[v]:
+#         dfs(i)
+
+# vertices = deque()
+# for i in g[a]:
+#     vertices.append(i)
+
+# while vertices:
+#     v = vertices.popleft()
+#     used[v] = True
+#     res += 1
+#     for i in g[v]:
+#         if not used[i]:
+#             vertices.append(i)
+    
+        
+# print(res)
+
+
+
+# ints = lambda: map(int, input().split())
+# from sys import setrecursionlimit
+# setrecursionlimit(10**5 + 7)
+
+# n, k = ints()
+
+# g = [[] for i in range(n + 1)]
+# used = [False for i in range(n + 1)]
+# res = [0] * (n + 1)
+
+# for i in range(n - 1):
+#     u, v = ints()
+#     g[u].append(v)
+#     g[v].append(u)
+    
+    
+# def dfs(v: int, p = -1):
+#     if used[v]:
+#         return 0
+    
+#     used[v] = True
+#     c = 1
+#     for i in g[v]:
+#         if i != p:
+#             c += dfs(i, v)
+#     res[v] = c        
+#     return c
+
+# dfs(k)
+
+# print(*res[1:])
+
+
+def m(fx, fy, sx, sy):
+    return abs(fx - sx) + abs(fy - sy)
+
+ax, ay = map(int, input().split())
+bx, by = map(int, input().split())
+dist = m(ax, ay, bx, by)
+print(dist)
+
+cx, cy = bx, by + dist
+cx1, cy1 = bx + dist, by
+
+print(cx, cy, cx1, cy1)
+formula = (m(ax, ay, cx, cy) == m(bx, by, cx, cy))
+print(formula)
 

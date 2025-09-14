@@ -209,5 +209,24 @@
     #             max_side = max(max_side, dp[i+1][j+1])
     
     # return max_side * max_side 
+
+def searchMatrix(matrix: list[list[int]], target: int) -> bool:
+    n = len(matrix)
+    m = len(matrix[0])
     
-    
+    for i in range(n):
+        l = 0
+        r = m - 1
+        while l <= r:
+            mid = (l + r) // 2
+            if matrix[i][mid] == target:
+                return True
+            elif matrix[i][mid] < target:
+                l = mid + 1
+            else:
+                r = mid - 1
+    return False
+
+print(searchMatrix(
+    [[1,3,5,7],[10,11,16,20],[23,30,34,60]], 3
+))

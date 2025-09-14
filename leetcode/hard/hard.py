@@ -19,3 +19,75 @@
 #     return dp[0][0]
 
 # print(calculateMinimumHP([[-2,-3,3],[-5,-10,1],[10,30,-5]]))
+
+
+
+
+
+class Solution:
+    def largestIsland(grid: list[list[int]]) -> int:
+        n = len(grid)
+        s = 0
+        def dfs(i, j, p):
+            nonlocal s
+            s = 0  # Reset counter for each new island
+            return dfs_helper(i, j, p)
+
+        def dfs_helper(i, j, p):
+            nonlocal s
+            if i < 0 or j < 0 or i >= n or j >= n or grid[i][j] != 1:
+                return 0
+            grid[i][j] = p
+            s += 1
+            dfs_helper(i, j - 1, p)
+            dfs_helper(i - 1, j, p)
+            dfs_helper(i + 1, j, p)
+            dfs_helper(i, j + 1, p)
+            return s
+
+        mp = {}
+        p = 2
+        for i in range(n):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    mp[p] = dfs(i, j, p)
+                    p += 1
+        
+        if not mp:
+            return 1
+        
+        if len(mp) == 1:
+            p -= 1
+            if mp[p] == n * n:
+                return mp[p]
+            else:
+                return mp[p] + 1
+        
+        mx = 1
+
+        for i in range(n):
+            for j in range(n):
+                if grid[i][j] == 0:
+                    curr = 1
+                    sosed = set()
+
+                    if i + 1 < n and grid[i + 1][j] > 1:
+                        sosed.add(grid[i + 1][j])
+                    
+                    if i - 1 >= 0 and grid[i  - 1][j] > 1:
+                        sosed.add(grid[i - 1][j])
+                    
+                    if j + 1 < n and grid[i][j+1] > 1:
+                        sosed.add(grid[i][j + 1])
+                    
+                    if j - 1 >= 0 and grid[i][j - 1] > 1:
+                        sosed.add(grid[i][j-1])
+                    
+                    for p in sosed:
+                        curr += mp[p]
+                    mx = max(mx, curr)
+        return mx
+    
+a = Solution.largestIsland([[1,1],[1,0]])
+
+print(a)

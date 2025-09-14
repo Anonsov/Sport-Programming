@@ -1318,11 +1318,5 @@
 #         if res[row[j]] < 3:
 #             print(row[j])
     
-# 467B
-n, m, k = map(int, input().split())
-pl = []
-for _ in range(4):
-    pl.append(int(input()))
-
 
 
