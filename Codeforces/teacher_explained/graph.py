@@ -115,33 +115,33 @@
 #     print(i)
 
 # from collections import PriorityQueue(maxsize=0)
-from collections import deque
-ints = lambda: map(int, input().split())
-n, m = ints()
-g = [[] for i in range(n + 1)]
-for i in range(m):
-    u, v, w = ints()
-    g[u].append((v, w))
-    g[v].append((u, w))
+# from collections import deque
+# ints = lambda: map(int, input().split())
+# n, m = ints()
+# g = [[] for i in range(n + 1)]
+# for i in range(m):
+#     u, v, w = ints()
+#     g[u].append((v, w))
+#     g[v].append((u, w))
     
-for i in g:
-    print(i)
+# for i in g:
+#     print(i)
 
 
-dist = [float('inf')] * (n + 1)
-prev = [-1] * (n + 1)
+# dist = [float('inf')] * (n + 1)
+# prev = [-1] * (n + 1)
 
-s = 1
-dist[s] = 0
+# s = 1
+# dist[s] = 0
 
-q = deque([s])
+# q = deque([s])
 
-while q:
-    v = q.popleft()
-    for u, w in g[v]:
-        ndist = dist[v] + w
-        if ndist < dist[u]:
-            dist[u] = ndist
-            prev[u] = v
-            q.append(u)
+# while q:
+#     v = q.popleft()
+#     for u, w in g[v]:
+#         ndist = dist[v] + w
+#         if ndist < dist[u]:
+#             dist[u] = ndist
+#             prev[u] = v
+#             q.append(u)
                 

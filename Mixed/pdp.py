@@ -2970,5 +2970,54 @@ Objective: Practice inheritance, composition, and method overriding.
 # inputs = list(map(int, input().split()))
 
 
+# import asyncio, random
+# meals = {'steak': 7, 'pasta': 5, 'soup': 3}
+# salads = {'caesar': 4, 'greek': 2, 'olivier': 6}
+# desserts = {'cake': 5, 'icecream': 2}
+
+
+# res = asyncio.Event()
+
+# async def prepare_dish(dish_name, base_time, dish_type):
+#     rand = random.randint(-2, 2)
+#     cooking_time = base_time + rand
+#     print(f"{dish_name} готовится {cooking_time}")
+#     await asyncio.sleep(cooking_time)
+    
+#     if dish_type == "main":
+#         print(f"{dish_name} готов")
+#         res.set()
+#         print(f"Подаем {dish_name} и ожидающие салаты")
+        
+#     elif dish_type == "salad":
+#         print(f"{dish_name} готов, ждет основное блюдо")
+#         await res.wait()
+#         print(f"Подаем {dish_name}")
+#     elif dish_type == "dessert":
+#         print(f"{dish_name} готов, но ждет основное блюдо...")
+#         await res.wait()
+#         print(f"Подаем {dish_name}")
+        
+# async def main():
+#     res.clear()
+#     meal_choice = input("Выберите основное блюдо (steak/pasta/soup): ")
+#     salad_choice = input("Выберите салат (caesar/greek/olivier): ")
+#     dessert_choice = input("Выберите десерт (cake/icecream): ")
+    
+#     main_task = asyncio.create_task(
+#         prepare_dish(meal_choice, meals[meal_choice], "main")
+#     )
+#     salad_task = asyncio.create_task(
+#         prepare_dish(salad_choice, salads[salad_choice], "salad")
+#     )
+#     dessert_task = asyncio.create_task(
+#         prepare_dish(dessert_choice, desserts[dessert_choice], "dessert")
+#     )
+#     await asyncio.gather(main_task, salad_task, dessert_task)
+#     print("Все блюда поданы!")
+
+# asyncio.run(main())
+
+
 
 

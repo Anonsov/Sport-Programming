@@ -112,4 +112,38 @@
 #     l = 0
 #     r = 0
     
+# from typing import List
+# def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+#     i = m - 1
+#     j = n - 1
+#     k = n + m - 1
     
+#     while j >= 0:
+#         if i >= 0 and nums1[i] > nums2[j]:
+#             nums1[k] = nums1[i]
+#             i-=1
+#         else:
+#             nums1[k] = nums2[j]
+#             j -= 1
+#         k-=1
+        
+#     return nums1    
+# print(merge([4,0,0,0,0,0], 1, [1,2,3,5,6], 5))
+# from typing import List
+# def canJump(nums: List[int]) -> bool:
+#     dp = [False] * len(nums)
+#     dp[0] = True
+#     if len(nums) == 1:
+#         return True
+#     i = 0
+#     mx = nums[0]
+#     while i < len(nums) - 1:
+#         mx = max(mx, i + nums[i])
+#         if i >= mx:
+#             return False
+        
+#         i += 1
+#     return True
+
+# print(canJump([2,3,0,3,0,0,1,0]))
+

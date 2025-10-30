@@ -1318,5 +1318,43 @@
 #         if res[row[j]] < 3:
 #             print(row[j])
     
+# ints = lambda: map(int, input().split())
+# mp = []
+# s, n = ints()
+# for i in range(n):
+#     x, y = ints()
+#     mp.append((x, y))
+
+# mp.sort()
+# flag = True
+# for key, value in mp:
+#     if s <= key:
+#         flag = False
+#         break
+#     s += value
+    
+# if flag:
+#     print("YES")
+# else:
+#     print("NO")
+
+
+# n = int(input())
+# a = list(map(int,input().split()))
+
+# for i in range(n):
+#     j = 1
+#     cnt = 0
+#     while j * j <= a[i] and cnt < 5:
+#         if a[i] % j == 0:
+#             cnt += 2
+#         if j * j == a[i]:
+#             cnt -= 1
+#         j+=1
+        
+#     if cnt == 3:
+#         print("YES")
+#     else:
+#         print("NO")
 
 

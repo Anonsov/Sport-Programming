@@ -210,23 +210,112 @@
     
     # return max_side * max_side 
 
-def searchMatrix(matrix: list[list[int]], target: int) -> bool:
-    n = len(matrix)
-    m = len(matrix[0])
+# def searchMatrix(matrix: list[list[int]], target: int) -> bool:
+#     n = len(matrix)
+#     m = len(matrix[0])
     
-    for i in range(n):
-        l = 0
-        r = m - 1
-        while l <= r:
-            mid = (l + r) // 2
-            if matrix[i][mid] == target:
-                return True
-            elif matrix[i][mid] < target:
-                l = mid + 1
-            else:
-                r = mid - 1
-    return False
+#     for i in range(n):
+#         l = 0
+#         r = m - 1
+#         while l <= r:
+#             mid = (l + r) // 2
+#             if matrix[i][mid] == target:
+#                 return True
+#             elif matrix[i][mid] < target:
+#                 l = mid + 1
+#             else:
+#                 r = mid - 1
+#     return False
 
-print(searchMatrix(
-    [[1,3,5,7],[10,11,16,20],[23,30,34,60]], 3
-))
+# print(searchMatrix(
+#     [[1,3,5,7],[10,11,16,20],[23,30,34,60]], 3
+# ))
+
+# from typing import List
+# def setZeroes(matrix: List[List[int]]) -> None:
+#     """
+#     Do not return anything, modify matrix in-place instead.
+#     """
+#     flag = float('inf')
+#     n = len(matrix)
+#     m = len(matrix[0])
+#     for i in range(n):
+#         for j in range(m):
+#             if matrix[i][j] == 0:
+#                 if i + 1 >= n:
+#                     matrix[0][j] = flag
+#                 else:
+#                     matrix[i + 1][j] = flag
+
+#                 if j + 1 >= m:
+#                     matrix[i][0] = flag
+#                 else:
+#                     matrix[i][j + 1] = flag
+#                 matrix[i - 1][j] = flag
+#                 matrix[i][j - 1] = flag
+#                 matrix[i][j] = flag
+#     for i in matrix:
+#         print(i)
+
+        
+# setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+
+
+def simplifyPath(path: str) -> str:
+    
+    """
+    как то нужно использовать stack чтобы проверять, допустим две точки, значит выходим, если одна точка то нужно остаться и ничего не делать, если слешов много то скипать их, может быть мне нужно будет использовать сплит функцию, идея пока что такова
+    """
+    # def slash_passer(path, i):
+    #     while i < len(path) and path[i] == "/":
+    #         i += 1
+    #     return i
+    
+    # def dot_passer(path, i):
+    #     cnt = 0
+    #     while i < len(path) and path[i] == ".":
+    #         cnt += 1
+    #         i += 1
+    #     return [cnt, i]
+    # def get_word_until_slash(path, i):
+    #     res = ""
+    #     while i < len(path) and (path[i] != "/" and path[i] != "."):
+    #         res += path[i]
+    #         i += 1
+    #     return [res, i]
+
+    # stack = []
+    # i = 0
+    # ans = "/"
+    # while i < len(path):
+    #     if path[i] == "/":
+    #         i = slash_passer(path, i)
+    #     elif path[i] == ".":
+    #         res = dot_passer(path, i)
+    #         cnt = res[0]
+    #         i = res[-1]
+    #         if cnt == 1:
+    #             continue
+    #         elif cnt == 2 and stack:
+    #             stack.pop()
+    #         elif cnt > 2:
+    #             stack.append(cnt * ".")
+    #     else:
+    #         res = get_word_until_slash(path, i)
+    #         word = res[0]
+    #         i = res[-1]
+    #         stack.append(word +"/")
+    # for i in range(len(stack)):
+    #     ans+=stack[i]
+    # if len(ans) == 1:
+    #     print(ans)
+    # else:
+    #     print(ans[:-1])
+        
+# simplifyPath("/../")
+# simplifyPath("/home/user/Documents/../Pictures")
+# simplifyPath("/.../a/../b/c/../d/./")
+# simplifyPath("/home/")
+# simplifyPath("/a//b////c/d//././/..")
+
+

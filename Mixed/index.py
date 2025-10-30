@@ -508,3 +508,14 @@
 
 
 
+# print(1 != 3)
+
+
+
+
+def lengthOfLongestSubstring(s: str) -> int:
+    l = 0
+    mx = 0
+    
+        
+lengthOfLongestSubstring("abcabcbb")

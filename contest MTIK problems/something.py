@@ -1149,18 +1149,87 @@
 # print(*res[1:])
 
 
-def m(fx, fy, sx, sy):
-    return abs(fx - sx) + abs(fy - sy)
+# def m(fx, fy, sx, sy):
+#     return abs(fx - sx) + abs(fy - sy)
 
-ax, ay = map(int, input().split())
-bx, by = map(int, input().split())
-dist = m(ax, ay, bx, by)
-print(dist)
+# ax, ay = map(int, input().split())
+# bx, by = map(int, input().split())
+# dist = m(ax, ay, bx, by)
+# print(dist)
 
-cx, cy = bx, by + dist
-cx1, cy1 = bx + dist, by
+# cx, cy = bx, by + dist
+# cx1, cy1 = bx + dist, by
 
-print(cx, cy, cx1, cy1)
-formula = (m(ax, ay, cx, cy) == m(bx, by, cx, cy))
-print(formula)
+# print(cx, cy, cx1, cy1)
+# formula = (m(ax, ay, cx, cy) == m(bx, by, cx, cy))
+# print(formula)
+
+
+
+# a = input()
+# dp = [0] * (len(a) + 1)
+# acnt = 0
+# arcnt = 0
+# res = 0
+# for i in a:
+#     if i == "a":
+#         acnt += 1
+#     elif i == "r":
+#         if acnt:
+#             acnt -= 1
+#             arcnt += 1
+#     elif i == "t":
+#         if arcnt:
+#             arcnt -= 1
+#             res += 1
+# print(res)
+
+
+# n = int(input())
+# a = list(map(int, input().split()))
+# res = 0
+# mp = {} 
+# p = []
+# for i in range(32):
+#     p.append(1<<i)
+
+# for i in a:
+#     for j in p:
+#         if i ^ j in mp:
+#             res += mp[i ^ j]
+#     if i in mp:
+#         mp[i] +=1
+#     else:
+#         mp[i] = 1
+    
+# print(res)
+
+# n, k = map(int, input().split())
+
+# if k > n * (n - 1) // 2:
+#     print(-1)
+# else:
+#     res = []
+#     l = 1
+#     r = n
+#     while l <= r and k:
+#         if k >= r - l:
+#             res.append(r)
+#             k -=  r - l
+#             r -= 1
+#         else:
+#             res.append(l + k)
+#             for i in range(l, l + k):
+#                 res.append(i)
+#             for i in range(l + k + 1, r + 1):
+#                 res.append(i)
+#             k = 0
+#             break
+#     if len(res) < n:
+#         for i in range(l ,r + 1):
+#             res.append(i)
+#     print(res)
+# u, v = map(int, input().split())
+
+
 
